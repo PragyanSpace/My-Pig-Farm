@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882782569901",
+    "project_id": "my-pig-farm",
+    "storage_bucket": "my-pig-farm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882782569901:android:d2383807d40bb34d6ecd24",
+        "android_client_info": {
+          "package_name": "com.example.pigfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882782569901-ue3fa4tnn5jfc6r4dol2ib1s34b277rv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9uxP9E5nf6Egx9x3JPfQ9h0RQ2hdUxTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882782569901-ue3fa4tnn5jfc6r4dol2ib1s34b277rv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
