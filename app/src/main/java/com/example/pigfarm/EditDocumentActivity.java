@@ -28,40 +28,53 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
-public class createData extends AppCompatActivity {
-    EditText mcreateTag,mcreateOrigin,mcreateBirthPlace;
-    TextView mcreateDob;
-    FloatingActionButton mcreatedatafab;
+public class EditDocumentActivity extends AppCompatActivity {
+    EditText mupdateTag,mupdateOrigin,mupdateBirthPlace;
+    TextView mupdateDob;
+    FloatingActionButton mupdatedatafab;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseFirestore firestore;
     Calendar calendar;
     DatePickerDialog.OnDateSetListener listener;
 
+    LocalDate today,birthdate;
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_data);
+        setContentView(R.layout.activity_edit_document);
 
-        mcreateTag=findViewById(R.id.createTag);
-        mcreateDob=findViewById(R.id.createDob);
-        mcreateOrigin=findViewById(R.id.createOrigin);
-        mcreateBirthPlace=findViewById(R.id.createBirthPlace);
-        mcreatedatafab=findViewById(R.id.createdatafab);
+        mupdateTag=findViewById(R.id.updateTag);
+        mupdateDob=findViewById(R.id.updateDob);
+        mupdateOrigin=findViewById(R.id.updateOrigin);
+        mupdateBirthPlace=findViewById(R.id.updateBirthPlace);
+        mupdatedatafab=findViewById(R.id.updatedatafab);
 
         firebaseAuth=FirebaseAuth.getInstance();
         firestore=FirebaseFirestore.getInstance();
         firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
 
         Intent intent=getIntent();
+        final String Tag=intent.getStringExtra("Tag");
+        final String Origin=intent.getStringExtra("Origin");
+        final String Place=intent.getStringExtra("Place");
+        final String Dob=intent.getStringExtra("Dob");
         final String category=intent.getStringExtra("Category");
+        final String id=intent.getStringExtra("id");
+
+        mupdateBirthPlace.setText(Place);
+        mupdateTag.setText(Tag);
+        mupdateDob.setText(Dob);
+        mupdateOrigin.setText(Origin);
+
 
 
 
@@ -73,10 +86,10 @@ public class createData extends AppCompatActivity {
 
 
 
-        mcreateDob.setOnClickListener(new View.OnClickListener() {
+        mupdateDob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog datePickerDialog=new DatePickerDialog(createData.this, android.R.style.Theme_Holo_Dialog_MinWidth,listener,year,month,day);
+                DatePickerDialog datePickerDialog=new DatePickerDialog(EditDocumentActivity.this, android.R.style.Theme_Holo_Dialog_MinWidth,listener,year,month,day);
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 datePickerDialog.show();
             }
@@ -93,22 +106,22 @@ public class createData extends AppCompatActivity {
                 if(today.getYear()<year||today.getMonthValue()<month||today.getDayOfMonth()<dayOfMonth)
                     Toast.makeText(getApplicationContext(),"Enter vaild date.",Toast.LENGTH_SHORT).show();
                 else
-                mcreateDob.setText(date);
+                mupdateDob.setText(date);
             }
         };
 
+        today= LocalDate.now();
+        birthdate=LocalDate.of(year,month+1,day);
 
 
-
-        mcreatedatafab.setOnClickListener(new View.OnClickListener() {
+        mupdatedatafab.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                final String Tag=mcreateTag.getText().toString().trim();
-                final String Dob=mcreateDob.getText().toString().trim();
-                final String Place=mcreateBirthPlace.getText().toString().trim();
-                final String Origin=mcreateOrigin.getText().toString().trim();
-                final String id= UUID.randomUUID().toString();
-
+                final String Tag=mupdateTag.getText().toString().trim();
+                final String Dob=mupdateDob.getText().toString().trim();
+                final String Place=mupdateBirthPlace.getText().toString().trim();
+                final String Origin=mupdateOrigin.getText().toString().trim();
 
                 if (Tag.isEmpty()||Dob.isEmpty()||Place.isEmpty()||Origin.isEmpty())
                     Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT).show();
@@ -120,13 +133,13 @@ public class createData extends AppCompatActivity {
                     record.put("Dob", Dob);
                     record.put("Origin", Origin);
                     record.put("Place", Place);
-                //    record.put("Age","Set on display");
+                    record.put("Age","Set on display");
 
-                    documentReference.set(record).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    documentReference.update(record).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(getApplicationContext(), "Record added!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(createData.this, pigRecord.class));
+                            startActivity(new Intent(EditDocumentActivity.this, pigRecord.class));
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

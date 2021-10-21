@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".createData"
-    android:background="@color/white">
+    tools:context=".EditDocumentActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,20 +21,17 @@
             android:paddingStart="10dp"
             android:text="Tag Number:"
             android:textColor="@color/black"
-            android:background="@color/white"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
-            android:textColor="@color/black"
             android:layout_width="185dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:layout_weight="0.5"
             android:background="@color/lightgray"
-            android:hint="Enter Tag Number"
             android:paddingStart="10dp"
-            android:id="@+id/createTag"/>
+            android:id="@+id/updateTag"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,21 +46,18 @@
             android:layout_weight="0.5"
             android:paddingStart="10dp"
             android:text="Date of Birth:"
-            android:background="@color/white"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
-            android:textColor="@color/black"
-            android:id="@+id/createDob"
+            android:id="@+id/updateDob"
             android:layout_width="185dp"
             android:layout_height="50dp"
             android:layout_marginTop="17dp"
             android:layout_weight="0.5"
             android:background="@color/lightgray"
             android:paddingStart="10dp"
-            android:hint="Enter Date Of Birth"
             android:textSize="16sp" />
     </LinearLayout>
     <LinearLayout
@@ -80,21 +73,18 @@
             android:layout_weight="0.5"
             android:paddingStart="10dp"
             android:text="Origin:"
-            android:background="@color/white"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
-            android:textColor="@color/black"
             android:layout_width="185dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:layout_weight="0.5"
             android:background="@color/lightgray"
-            android:hint="Enter Origin"
             android:paddingStart="10dp"
-            android:id="@+id/createOrigin"/>
+            android:id="@+id/updateOrigin"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,21 +99,18 @@
             android:layout_weight="0.5"
             android:paddingStart="10dp"
             android:text="Birth Place:"
-            android:background="@color/white"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
-            android:textColor="@color/black"
             android:layout_width="185dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:layout_weight="0.5"
             android:background="@color/lightgray"
-            android:hint="Enter Birth Place"
             android:paddingStart="10dp"
-            android:id="@+id/createBirthPlace"/>
+            android:id="@+id/updateBirthPlace"/>
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -140,7 +127,7 @@
         android:layout_weight="1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/createdatafab"
+        android:id="@+id/updatedatafab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
