@@ -50,6 +50,12 @@ public class pigRecord extends AppCompatActivity {
         Boar=findViewById(R.id.Boar);
         linearLayout=findViewById(R.id.linearLayout);
 
+        /*........................................*/
+        SowFragment sowFragment=new SowFragment();
+        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.linearLayout,sowFragment);
+        transaction.commit();
+
 
 
         Sow.setOnClickListener(new View.OnClickListener() {

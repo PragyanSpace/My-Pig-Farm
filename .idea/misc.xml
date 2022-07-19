@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/drawable/editimg.xml" value="0.2703125" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_create_data.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_edit_document.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_forgotpassword.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_home_page.xml" value="0.264" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_pig_record.xml" value="0.264" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/activity_vaccination.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/fragment_boar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/fragment_fatteners.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PROGYAN/AndroidStudioProjects/PigFarm/app/src/main/res/layout/fragment_gilt.xml" value="0.15328467153284672" />

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PigFarm">
         <activity
+            android:name=".Vaccination"
+            android:exported="true" />
+        <activity
+            android:name=".HomePage"
+            android:exported="true" />
+        <activity
             android:name=".EditDocumentActivity"
             android:exported="true" />
         <activity

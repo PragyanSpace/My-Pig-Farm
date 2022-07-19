@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         if(firebaseUser!=null)
         {
             finish();
-            startActivity(new Intent(MainActivity.this,pigRecord.class));
+            startActivity(new Intent(MainActivity.this,HomePage.class));
         }
 
         mloginBtn=findViewById(R.id.loginBtn);
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(getApplicationContext(),"Logged in",Toast.LENGTH_SHORT).show();
             finish();
-            startActivity(new Intent(MainActivity.this,pigRecord.class));
+            startActivity(new Intent(MainActivity.this,HomePage.class));
         }
         else
         {
